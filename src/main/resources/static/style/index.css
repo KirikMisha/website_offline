@@ -1,0 +1,95 @@
+.header {
+    background-color: #d31f21;
+    font-family: 'Playfair Display', sans-serif;
+}
+.form-control {
+    margin-top: 1em;
+}
+.container-fluid{
+    font-family: 'Playfair Display', sans-serif;
+}
+.style-head {
+    position: absolute;
+    width: 100%;
+    height: 304px;
+    top: 65px;
+    background: linear-gradient(180deg, #D31F21 0%, rgba(217, 217, 217, 0) 100%);
+    /*z-index: 1;*/
+}
+.color-main.link-highlight {
+    position: relative;
+    z-index: 2;
+}
+.under-style{
+    margin-bottom: 100px;
+    position: absolute;
+    width: 1519px;
+    height: 211px;
+    left: 0px;
+    top: 1450px;
+    background: linear-gradient(360deg, #D31F21 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+.text, h2, p {
+    position: relative;
+    z-index: 2;
+}
+header a.active {
+    font-weight: bold;
+    color: red;
+}
+#collapsedNav {
+    z-index: 9999;
+    background-color: rgba(73, 71, 71, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.navbar-toggler {
+    z-index: 10000;
+}
+
+#collapsedNav.show {
+    display: block;
+}
+
+#collapsedNav .navbar-nav {
+    text-align: right;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.nav-menu{
+    float: right;
+    margin-left: auto;
+}
+.nav-link.col-1{
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    z-index: 2;
+}
+.nav-link:hover,
+.link-highlight:hover {
+    color: #000000;
+}
+.link-highlight a:hover {
+    color: #000000;
+}
+

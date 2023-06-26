@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>Поиск рабочих</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/list-main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/bootstrap.min.css}">
+</head>
+<body>
+
+<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<header th:replace="~{components/header :: header}"></header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Имя:</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Введите имя">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Фамилия:</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Введите фамилию">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8" id="results">
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h4 class="card-title">Результаты поиска</h4>
+                    <div class="d-flex flex-row flex-wrap">
+                        <div th:each="el : ${persons}" class="card mt-2">
+                            <div class="card-img-container">
+                                <img th:src="@{/icon/Icon_Person.png}" class="card-img" alt="Изображение работника">
+                            </div>
+                            <div class="card-body">
+                                <h5 th:text="${el.firstName + ' ' + el.middleName + ' ' + el.lastName}" class="card-title"></h5>
+                                <p>
+                                    <span th:text="${'Городской номер: ' + el.phoneNumber}" class="card-text"></span><br>
+                                    <span th:text="${'Местный номер: ' + el.landlinePhone}" class="card-text"></span><br>
+                                    <span th:text="${'Должность: ' + el.position}" class="card-text"></span><br>
+                                    <span th:text="${'Номер здания: ' + el.officeNumber}" class="card-text"></span><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

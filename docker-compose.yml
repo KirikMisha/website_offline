@@ -1,0 +1,40 @@
+#версия спецификации докера
+version: '3'
+
+#прописываем сервисы
+services:
+  mysql:
+    image: 'mysql:8.0.33'
+    # переменные окружения
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web?useSSL=false&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+
+    ports:
+      - "3306:3306"
+    networks:
+      - test-3-2_default
+
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - JAVA_VERSION=11.0.19
+
+    container_name: 'java-app'
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - test-3-2_default
+
+networks:
+  test-3-2_default:
+    external: true
+
+#правила взаимодействия контейнеров.

@@ -1,0 +1,40 @@
+/*todo.todo: make more files not on every page but on every component as header, footer ...*/
+/*
+    todo: use BEM to name classes
+*/
+
+@import "font.css";
+body {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 400;
+}
+
+.background-image-container {
+    background-image: url("../icon/main_img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1586px;
+    margin-top: -25px;
+    z-index: 0;
+}
+.color-main{
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.nav-menu{
+    float: right;
+    margin-left: auto;
+}
+.white-text{
+    color: white;
+}
+#currentDayOfWeek {
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}

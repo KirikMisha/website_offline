@@ -1,0 +1,28 @@
+TODO: add list except using just links
+<ul>
+     <li>
+            <a>text</a>
+     </li>
+</ul>
+
+TODO: semantic code!!! header should be tag header++
+todo: add components that you use on every page or you can reuse them https://www.thymeleaf.org/doc/articles/layouts.html++
+todo: do this with all code u reuse ++
+todo : remove br ++
+todo : it takes all your pages ++
+todo : icon in header should be link too ++
+todo.todo: use js:
+ - to send requests,
+ - read about ajax,
+ - events in js,
+ - click event, submit event,
+ - json stringify
+ - make some classes in js as dto in java
+TODO: add some bandler as webpack, vite, parsel
+TODO: add git ++
+todo: rename repo to normal name repository
+TODO: rename main file correctly as your application names ++
+TODO: add spring dev tools to work more comfortable ++
+//TODO: remove all logic except vies in services++
+//TODO: add exception handlers ++
+//TODO: add dto validation ?+

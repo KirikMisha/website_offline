@@ -1,0 +1,29 @@
+.header {
+    background-color: #d31f21;
+}
+.card {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    /*width: 300px;*/
+    display: flex;
+}
+.card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.card-text {
+    font-size: 18px;
+    color: #666;
+}
+.mt-2 {
+    margin-top: 1.9rem!important;
+    margin-left: 600px;
+}
+.card-img-top{
+    width: 200px;
+    margin-right: 20px;
+}
+#results {
+    height: 100vh; /* Устанавливаем высоту 100% от видимой области страницы */
+    overflow-y: scroll; /* Добавляем вертикальную прокрутку */
+}
