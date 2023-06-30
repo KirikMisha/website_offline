@@ -8,9 +8,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/style/home.css}">
 </head>
 <body>
-<header th:replace="components/header :: header">
-
-</header>
+<header th:replace="components/header :: header"></header>
 
 <div class="container-fluid background-image-container">
     <div class="row">
@@ -18,13 +16,13 @@
             <h2 class="text-center">Новости</h2>
             <p>Здесь будут новости</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" th:if="${additionalInfoList.size() > 0}">
             <div id="currentDayOfWeek"></div>
             <p class="text-center" style="font-size: 18px; font-weight: bold; color: #000000; margin-top: 20px;">
                 В мире нет таких вершин, что взять нельзя… <br>
                 <span style="font-size: 14px; font-style: italic; color: #000000;">В. Высоцкий</span>
             </p>
-            <p><span class="color-main" ></span></p>
+            <p><span class="color-main"></span></p>
             <div class="color-main link-highlight">
                 <ul>
                     <li th:each="additionalInfo : ${additionalInfoList}" class="white-text">
@@ -35,18 +33,17 @@
                     </li>
                 </ul>
             </div>
-
         </div>
-        <div class="col-md-4">
-            <h2 class="text-center text">Объявления</h2>
-            <p class="text">Здесь будут объявления</p>
+        <div class="col-md-4" th:if="${additionalInfoList.size() == 0}">
+            <p>Нет доступной информации о дне.</p>
         </div>
     </div>
 </div>
+
 <div class="style-head"></div>
 <div class="under-style"></div>
 <img th:class="img-fluid" alt="низ" th:src="@{/icon/under_head.png}">
-</div>
+
 <script src="/js/bootstrap.js"></script>
 <script src="/js/calendar_day.js"></script>
 </body>

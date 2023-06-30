@@ -79,9 +79,6 @@ public class CalendarDay {
         return additionalInfoList;
     }
 
-//    @Lob
-//    @Column(columnDefinition = "LONGTEXT")
-//    private String internationalInformation;
 
     @Lob
     @Column(columnDefinition = "LONGTEXT")
