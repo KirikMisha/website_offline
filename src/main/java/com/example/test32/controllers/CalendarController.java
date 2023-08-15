@@ -2,7 +2,9 @@ package com.example.test32.controllers;
 
 import com.example.test32.models.CalendarDay;
 import com.example.test32.models.News;
+import com.example.test32.models.Quotes;
 import com.example.test32.repo.NewsRepository;
+import com.example.test32.repo.QuoteRepository;
 import com.example.test32.services.CalendarDayService;
 import com.example.test32.services.ParserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +18,19 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class CalendarController {
     private final CalendarDayService calendarDayService;
     private final NewsRepository newsRepository;
+    private final QuoteRepository quoteRepository;
 
     @Autowired
-    public CalendarController(CalendarDayService calendarDayService, NewsRepository newsRepository) {
+    public CalendarController(CalendarDayService calendarDayService, NewsRepository newsRepository, QuoteRepository quoteRepository) {
         this.calendarDayService = calendarDayService;
         this.newsRepository = newsRepository;
+        this.quoteRepository = quoteRepository;
     }
 
     @GetMapping("/")
@@ -56,6 +61,16 @@ public class CalendarController {
         // Получение списка последних новостей
         List<News> newsList = newsRepository.findAllByOrderByCreatedAtDesc();
         model.addAttribute("newsList", newsList);
+
+        // Получение списка цитат
+        List<Quotes> quoteList = quoteRepository.findAll();
+
+        // Генерация случайного индекса
+        Random random = new Random();
+        int randomIndex = random.nextInt(quoteList.size());
+
+        model.addAttribute("quoteList", quoteList);
+        model.addAttribute("randomIndex", randomIndex);
 
         return "home";
     }

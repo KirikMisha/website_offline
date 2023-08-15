@@ -27,8 +27,10 @@
         <div class="col-md-4" th:if="${additionalInfoList.size() > 0}">
             <div id="currentDayOfWeek"></div>
             <p class="text-center" style="font-size: 18px; font-weight: bold; color: #000000; margin-top: 20px;">
-                В мире нет таких вершин, что взять нельзя… <br>
-                <span style="font-size: 14px; font-style: italic; color: #000000;">В. Высоцкий</span>
+                <span th:text="${quoteList[randomIndex].quoteText}"></span> <br>
+                <span style="font-size: 14px; font-style: italic; color: #000000;">
+            <span th:text="${quoteList[randomIndex].authorName}"></span>
+        </span>
             </p>
             <p><span class="color-main"></span></p>
             <div class="color-main link-highlight">
