@@ -18,7 +18,9 @@ public class News {
     @NotBlank(message = "Please enter the title")
     private String title;
 
-    @NotBlank(message = "Please enter the text")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "text", columnDefinition = "CLOB")
     private String text;
 
     @Lob

@@ -4,13 +4,15 @@
   <link rel="stylesheet" href="/style/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
   <link rel="stylesheet" type="text/css" th:href="@{/style/home.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/style/add-news.css}">
+
   <title>Add News</title>
   <!-- Ваши стили -->
 </head>
 <body>
 <header th:replace="components/header :: header"></header>
 <div class="container-fluid background-image-container">
-<h2>Добавть новость</h2>
+<h2>Добавить новость</h2>
 <form th:action="@{/news/add}" th:object="${newsForm}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
   <div>
     <label for="title">Заголовок:</label>

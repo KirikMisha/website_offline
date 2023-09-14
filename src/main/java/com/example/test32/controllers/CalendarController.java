@@ -45,20 +45,13 @@ public class CalendarController {
         model.addAttribute("additionalInfoList", todayDay.getAdditionalInfoList());
         model.addAttribute("infoNumber", 1); // Установите нужное значение infoNumber
 
-        // Получение последней новости
-        News lastNews = newsRepository.findTopByOrderByCreatedAtDesc();
-        byte[] imageData = new byte[0];
-        try {
-            InputStream inputStream = lastNews.getImageUrl().getBinaryStream();
-            imageData = inputStream.readAllBytes();
-        } catch (SQLException | IOException e) {
-            e.printStackTrace(); // Обработка ошибок чтения изображения
-        }
-        System.out.println("Image data length: " + imageData.length); // Вывод длины данных изображения
-        model.addAttribute("lastNews", lastNews);
+        // Получение списка всех новостей
+        List<News> allNews = newsRepository.findAllByOrderByCreatedAtDesc();
 
+        // Установка списка новостей в модель
+        model.addAttribute("allNews", allNews);
 
-        // Получение списка последних новостей
+        // Получение списка новостей
         List<News> newsList = newsRepository.findAllByOrderByCreatedAtDesc();
         model.addAttribute("newsList", newsList);
 

@@ -5,15 +5,17 @@ import com.example.test32.models.News;
 import com.example.test32.repo.NewsRepository;
 import com.example.test32.services.NewsService;
 import jakarta.validation.Valid;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/news")
@@ -36,6 +38,34 @@ public class NewsController {
             ipAddress = request.getRemoteAddr();
         }
         return ipAddress;
+    }
+
+    @Scheduled(cron = "0 0 0 * * ?") // Каждый день в полночь
+    public void deleteOldNews() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, -14); // Определяем дату, которая была 14 дней назад
+
+        Date twoWeeksAgo = calendar.getTime();
+
+        // Получаем список старых новостей
+        List<News> oldNews = newsRepository.findAllByCreatedAtBefore(twoWeeksAgo);
+
+        // Удаляем старые новости
+        newsRepository.deleteAll(oldNews);
+    }
+
+    @GetMapping("/details/{id}")
+    public String showNewsDetails(@PathVariable Long id, Model model) {
+        // Найдите новость по ее идентификатору
+        Optional<News> newsOptional = newsRepository.findById(id);
+        if (newsOptional.isPresent()) {
+            News news = newsOptional.get();
+            model.addAttribute("news", news);
+            return "news-details"; // Имя представления для полного текста новости
+        } else {
+            // Обработайте случай, если новость с указанным идентификатором не найдена
+            return "redirect:/"; // Редирект на главную страницу или другую страницу по вашему выбору
+        }
     }
 
     @GetMapping("/add")
@@ -61,6 +91,12 @@ public class NewsController {
 
         // Создание новости
         News news = newsService.createNews(newsForm);
+
+        // Установка значения createdAt
+        news.setCreatedAt(new Date()); // Установите актуальную дату
+
+        // Сохранение новости в базу данных
+        newsRepository.save(news);
 
         // Дополнительная обработка или редирект на главную страницу
         return "redirect:/";

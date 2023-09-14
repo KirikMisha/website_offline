@@ -9,12 +9,13 @@
     font-family: 'Playfair Display', sans-serif;
 }
 .style-head {
+    margin-bottom: 0;
     position: absolute;
     width: 100%;
     height: 304px;
     top: 65px;
     background: linear-gradient(180deg, #D31F21 0%, rgba(217, 217, 217, 0) 100%);
-    /*z-index: 1;*/
+    z-index: 0;
 }
 .color-main.link-highlight {
     position: relative;

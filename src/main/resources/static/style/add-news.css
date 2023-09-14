@@ -1,0 +1,21 @@
+textarea {
+    width: 100%;
+    min-width: 400px;
+    min-height: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: both;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с прозрачностью 50% */
+    color: white; /* Цвет текста */
+}
+div > input#title {
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с прозрачностью 50% */
+    color: white; /* Белый цвет текста */
+    padding: 5px 10px; /* Добавление внутренних отступов для окошка */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Добавление скругленных углов */
+    width: 20%; /* Заполнить всю доступную ширину */
+}

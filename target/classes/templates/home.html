@@ -14,21 +14,23 @@
     <div class="row">
         <div class="col-md-4">
             <h2 class="text-center">Новости</h2>
-            <ul>
-                <li th:each="news : ${newsList}">
-                    <h2 th:text="${news.title}"></h2>
-                    <p th:text="${news.text}"></p>
-                    <!-- Вывод изображения, если оно есть -->
-                    <img th:if="${lastNews.imageUrl != null}" th:src="@{'/download/' + ${lastNews.id}}" class="img-fluid" alt="News Image" style="max-width: 100%; max-height: 400px;"/>
-
-                </li>
-            </ul>
+            <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 9999;">
+                <!-- Вывод всех новостей -->
+                <th:block th:each="news : ${allNews}">
+                    <h2><a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a></h2>
+                    <p th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></p>
+                    <!-- Вывод изображения новости, если оно есть -->
+                    <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid" alt="News Image" style="max-width: 100%; max-height: 200px;"/>
+                </th:block>
+            </div>
         </div>
         <div class="col-md-4" th:if="${additionalInfoList.size() > 0}">
             <div id="currentDayOfWeek"></div>
             <p class="text-center" style="font-size: 18px; font-weight: bold; color: #000000; margin-top: 20px;">
-                В мире нет таких вершин, что взять нельзя… <br>
-                <span style="font-size: 14px; font-style: italic; color: #000000;">В. Высоцкий</span>
+                <span th:text="${quoteList[randomIndex].quoteText}"></span> <br>
+                <span style="font-size: 14px; font-style: italic; color: #000000;">
+            <span th:text="${quoteList[randomIndex].authorName}"></span>
+        </span>
             </p>
             <p><span class="color-main"></span></p>
             <div class="color-main link-highlight">
