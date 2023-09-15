@@ -1,13 +1,13 @@
 package com.example.test32.forms;
 
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @NoArgsConstructor
-public class NewsForm {
+public class AnnouncementForm {
     @NotNull
     private String title;
 

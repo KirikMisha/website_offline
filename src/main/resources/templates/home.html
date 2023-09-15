@@ -7,6 +7,19 @@
     <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/style/home.css}">
 </head>
+<style>
+    /* Стили для полосы прокрутки */
+    .news-container::-webkit-scrollbar {
+        width: 8px; /* Ширина полосы прокрутки */
+        background-color: rgba(0, 0, 0, 0.5); /* Цвет фона полосы прокрутки (полупрозрачный черный) */
+    }
+
+    /* Стили для ползунка (иконки) полосы прокрутки */
+    .news-container::-webkit-scrollbar-thumb {
+        background-color: #333; /* Цвет ползунка (темный) */
+        border-radius: 10px; /* Скругленные углы ползунка */
+    }
+</style>
 <body>
 <header th:replace="components/header :: header"></header>
 
@@ -14,7 +27,7 @@
     <div class="row">
         <div class="col-md-4">
             <h2 class="text-center">Новости</h2>
-            <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 9999;">
+            <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех новостей -->
                 <th:block th:each="news : ${allNews}">
                     <h2><a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a></h2>
@@ -47,13 +60,24 @@
         <div class="col-md-4" th:if="${additionalInfoList.size() == 0}">
             <p>Нет доступной информации о дне.</p>
         </div>
+        <div class="col-md-4">
+            <h2 class="text-center">Объявления</h2>
+            <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
+                <!-- Вывод всех объявлений -->
+                <th:block th:each="announcement : ${allAnnouncements}">
+                    <h2><a th:text="${announcement.title}" th:href="@{'/announcements/details/' + ${announcement.id}}"></a></h2>
+                    <p th:text="${#strings.length(announcement.text) > 30 ? #strings.substring(announcement.text, 0, 30) + '...' : announcement.text}"></p>
+                    <!-- Вывод изображения объявления, если оно есть -->
+                    <img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid" alt="Announcement Image" style="max-width: 100%; max-height: 200px;"/>
+                </th:block>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="style-head"></div>
 <div class="under-style"></div>
 <img th:class="img-fluid" alt="низ" th:src="@{/icon/under_head.png}">
-
 <script src="/js/bootstrap.js"></script>
 <script src="/js/calendar_day.js"></script>
 </body>

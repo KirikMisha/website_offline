@@ -27,3 +27,9 @@
     height: 100vh; /* Устанавливаем высоту 100% от видимой области страницы */
     overflow-y: scroll; /* Добавляем вертикальную прокрутку */
 }
+body {
+    background-image: url('../icon/main_img.png');
+    background-size: cover; /* Растянуть картинку на весь экран */
+    background-repeat: no-repeat; /* Запретить повторение фоновой картинки */
+    background-attachment: fixed; /* Зафиксировать фон, чтобы он не скролился */
+}

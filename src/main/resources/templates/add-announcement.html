@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/add-news.css}"> <!-- Создайте стиль для страницы добавления объявлений -->
+
+    <title>Add Announcement</title>
+</head>
+<body>
+<header th:replace="components/header :: header"></header>
+<div class="container-fluid background-image-container">
+    <h2>Добавить объявление</h2>
+    <form th:action="@{/announcements/add}" th:object="${announcementForm}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+        <div>
+            <label for="title">Заголовок:</label>
+            <input type="text" id="title" th:field="*{title}"/>
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+        </div>
+        <div>
+            <label for="text">Текст:</label>
+            <textarea id="text" th:field="*{text}"></textarea>
+            <span th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></span>
+        </div>
+        <div>
+            <label for="image">Изображение:</label>
+            <input type="file" id="image" th:field="*{image}"/>
+        </div>
+        <button type="submit">Загрузить</button>
+    </form>
+</div>
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>

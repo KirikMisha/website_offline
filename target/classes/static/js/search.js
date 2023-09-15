@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var firstNameInput = document.getElementById("firstName");
     var lastNameInput = document.getElementById("lastName");
+    var resultsContainer = document.getElementById("results"); // Получаем контейнер результатов
 
     firstNameInput.addEventListener("keyup", search);
     lastNameInput.addEventListener("keyup", search);
@@ -8,6 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function search() {
         var firstName = firstNameInput.value;
         var lastName = lastNameInput.value;
+
+        if (firstName.trim() !== '' || lastName.trim() !== '') {
+            // Если хотя бы одно из полей поиска содержит символы, отобразите результаты
+            resultsContainer.style.display = 'block'; // Отображаем контейнер результатов
+        } else {
+            // В противном случае скройте результаты
+            resultsContainer.style.display = 'none'; // Скрываем контейнер результатов
+        }
 
         axios.get("/list/search", {
             params: {

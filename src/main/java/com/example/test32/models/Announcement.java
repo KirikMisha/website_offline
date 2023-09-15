@@ -1,16 +1,16 @@
 package com.example.test32.models;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import jakarta.validation.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.sql.Blob;
 import java.util.Date;
 
 @Entity
-@Table(name = "news")
+@Table(name = "announcements")
 @Data
-public class News {
+public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,8 +18,7 @@ public class News {
     @NotBlank(message = "Please enter the title")
     private String title;
 
-    @Lob
-    @Column(name = "text", columnDefinition = "CLOB")
+    @NotBlank(message = "Please enter the text")
     private String text;
 
     @Lob
@@ -30,3 +29,4 @@ public class News {
     @Column(name = "created_at")
     private Date createdAt;
 }
+
