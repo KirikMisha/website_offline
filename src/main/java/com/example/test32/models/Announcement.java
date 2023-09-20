@@ -1,7 +1,7 @@
 package com.example.test32.models;
 
-import lombok.Data;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Blob;
@@ -19,6 +19,7 @@ public class Announcement {
     private String title;
 
     @NotBlank(message = "Please enter the text")
+    @Column(name = "text", length = 5000)
     private String text;
 
     @Lob
@@ -29,4 +30,3 @@ public class Announcement {
     @Column(name = "created_at")
     private Date createdAt;
 }
-

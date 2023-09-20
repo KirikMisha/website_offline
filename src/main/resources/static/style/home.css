@@ -38,4 +38,35 @@ a {
     text-align: center;
     margin: 0 auto;
 }
+/* Стили для полосы прокрутки */
+.news-container::-webkit-scrollbar {
+    width: 8px; /* Ширина полосы прокрутки */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона полосы прокрутки (полупрозрачный черный) */
+}
+.announcement-container::-webkit-scrollbar {
+    width: 8px; /* Ширина полосы прокрутки */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона полосы прокрутки (полупрозрачный черный) */
+}
+
+/* Стили для ползунка (иконки) полосы прокрутки */
+.news-container::-webkit-scrollbar-thumb {
+    background-color: #333; /* Цвет ползунка (темный) */
+    border-radius: 10px; /* Скругленные углы ползунка */
+}
+.announcement-container::-webkit-scrollbar-thumb {
+    background-color: #333; /* Цвет ползунка (темный) */
+    border-radius: 10px; /* Скругленные углы ползунка */
+}
+
+.announcement-container{
+    max-height: 400px; /* Устанавливает максимальную высоту контейнера */
+    overflow-y: auto; /* Включает вертикальную полосу прокрутки */
+    overflow-x: hidden; /* Скрывает горизонтальную полосу прокрутки */
+    direction: rtl; /* Изменяет направление прокрутки на справа налево */
+}
+
+.custom-h2 {
+    margin-top: 20px;
+}
+
 

@@ -11,6 +11,7 @@ import java.util.Date;
 @Table(name = "news")
 @Data
 public class News {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

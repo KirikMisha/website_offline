@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var details = document.createElement("p");
         cardBody.appendChild(details);
 
-        var phoneNumber = document.createElement("span");
-        phoneNumber.classList.add("card-text");
-        phoneNumber.textContent = "Городской номер: " + person.phoneNumber;
-        details.appendChild(phoneNumber);
+        var position = document.createElement("span");
+        position.classList.add("card-text");
+        position.textContent = "Должность: " + person.position;
+        details.appendChild(position);
         details.appendChild(document.createElement("br"));
 
         var landlinePhone = document.createElement("span");
@@ -74,11 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
         details.appendChild(landlinePhone);
         details.appendChild(document.createElement("br"));
 
-        var position = document.createElement("span");
-        position.classList.add("card-text");
-        position.textContent = "Должность: " + person.position;
-        details.appendChild(position);
+        var phoneNumber = document.createElement("span");
+        phoneNumber.classList.add("card-text");
+        phoneNumber.textContent = "Городской номер: " + person.phoneNumber;
+        details.appendChild(phoneNumber);
         details.appendChild(document.createElement("br"));
+
 
         var officeNumber = document.createElement("span");
         officeNumber.classList.add("card-text");

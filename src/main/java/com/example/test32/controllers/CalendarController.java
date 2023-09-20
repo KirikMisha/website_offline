@@ -8,16 +8,12 @@ import com.example.test32.repo.QuoteRepository;
 import com.example.test32.services.CalendarDayService;
 import com.example.test32.models.Announcement;
 import com.example.test32.repo.AnnouncementRepository;
-import com.example.test32.services.ParserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ResourceLoader;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
@@ -63,7 +59,7 @@ public class CalendarController {
         List<Quotes> quoteList = quoteRepository.findAll();
 
         // Получение списка объявлений
-        List<Announcement> allAnnouncements = announcementRepository.findAll();
+        List<Announcement> announcements = announcementRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
 
         // Генерация случайного индекса
         Random random = new Random();
@@ -71,7 +67,7 @@ public class CalendarController {
 
         model.addAttribute("quoteList", quoteList);
         model.addAttribute("randomIndex", randomIndex);
-        model.addAttribute("allAnnouncements", allAnnouncements);
+        model.addAttribute("allAnnouncements", announcements);
 
         return "home";
     }

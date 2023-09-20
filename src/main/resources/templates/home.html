@@ -4,25 +4,11 @@
     <title th:text="${title}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="/style/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/style/home.css}">
+    <link rel="stylesheet" type="text/css" href="/style/index.css">
+    <link rel="stylesheet" type="text/css" href="/style/home.css">
 </head>
-<style>
-    /* Стили для полосы прокрутки */
-    .news-container::-webkit-scrollbar {
-        width: 8px; /* Ширина полосы прокрутки */
-        background-color: rgba(0, 0, 0, 0.5); /* Цвет фона полосы прокрутки (полупрозрачный черный) */
-    }
-
-    /* Стили для ползунка (иконки) полосы прокрутки */
-    .news-container::-webkit-scrollbar-thumb {
-        background-color: #333; /* Цвет ползунка (темный) */
-        border-radius: 10px; /* Скругленные углы ползунка */
-    }
-</style>
 <body>
 <header th:replace="components/header :: header"></header>
-
 <div class="container-fluid background-image-container">
     <div class="row">
         <div class="col-md-4">
@@ -30,7 +16,7 @@
             <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех новостей -->
                 <th:block th:each="news : ${allNews}">
-                    <h2><a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a></h2>
+                    <h2 class="custom-h2"><a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a></h2>
                     <p th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></p>
                     <!-- Вывод изображения новости, если оно есть -->
                     <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid" alt="News Image" style="max-width: 100%; max-height: 200px;"/>
@@ -39,6 +25,7 @@
         </div>
         <div class="col-md-4" th:if="${additionalInfoList.size() > 0}">
             <div id="currentDayOfWeek"></div>
+            <p class="text-center" style="font-size: 18px; font-weight: bold; color: #000000; margin-top: 20px;"> Цитата дня</p>
             <p class="text-center" style="font-size: 18px; font-weight: bold; color: #000000; margin-top: 20px;">
                 <span th:text="${quoteList[randomIndex].quoteText}"></span> <br>
                 <span style="font-size: 14px; font-style: italic; color: #000000;">
@@ -62,10 +49,10 @@
         </div>
         <div class="col-md-4">
             <h2 class="text-center">Объявления</h2>
-            <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
+            <div class="announcement-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех объявлений -->
                 <th:block th:each="announcement : ${allAnnouncements}">
-                    <h2><a th:text="${announcement.title}" th:href="@{'/announcements/details/' + ${announcement.id}}"></a></h2>
+                    <h2 class="custom-h2"><a th:text="${announcement.title}" th:href="@{'/announcements/details/' + ${announcement.id}}"></a></h2>
                     <p th:text="${#strings.length(announcement.text) > 30 ? #strings.substring(announcement.text, 0, 30) + '...' : announcement.text}"></p>
                     <!-- Вывод изображения объявления, если оно есть -->
                     <img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid" alt="Announcement Image" style="max-width: 100%; max-height: 200px;"/>
