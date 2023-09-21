@@ -64,26 +64,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var position = document.createElement("span");
         position.classList.add("card-text");
-        position.textContent = "Должность: " + person.position;
+        position.innerHTML = "<strong>Должность:</strong> " + person.position; // Добавляем <strong> вокруг "Должность"
         details.appendChild(position);
         details.appendChild(document.createElement("br"));
 
         var landlinePhone = document.createElement("span");
         landlinePhone.classList.add("card-text");
-        landlinePhone.textContent = "Местный номер: " + person.landlinePhone;
+        landlinePhone.innerHTML = "<strong>Местный номер:</strong> " + person.landlinePhone; // Добавляем <strong> вокруг "Местный номер"
         details.appendChild(landlinePhone);
         details.appendChild(document.createElement("br"));
 
         var phoneNumber = document.createElement("span");
         phoneNumber.classList.add("card-text");
-        phoneNumber.textContent = "Городской номер: " + person.phoneNumber;
+        phoneNumber.innerHTML = "<strong>Городской номер:</strong> " + person.phoneNumber; // Добавляем <strong> вокруг "Городской номер"
         details.appendChild(phoneNumber);
         details.appendChild(document.createElement("br"));
 
-
         var officeNumber = document.createElement("span");
         officeNumber.classList.add("card-text");
-        officeNumber.textContent = "Номер здания: " + person.officeNumber;
+        officeNumber.innerHTML = "<strong>Номер здания:</strong> " + person.officeNumber; // Добавляем <strong> вокруг "Номер здания"
         details.appendChild(officeNumber);
         details.appendChild(document.createElement("br"));
 
