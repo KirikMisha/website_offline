@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "com.example.test32.repo")
+@EnableJpaRepositories(basePackages = "com.example.test32.repository")
 @EntityScan(basePackages = "com.example.test32.models")
 public class WorkWeb {
 

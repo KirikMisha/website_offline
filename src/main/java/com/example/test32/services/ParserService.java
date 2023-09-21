@@ -1,6 +1,6 @@
 package com.example.test32.services;
 
-import com.example.test32.repo.PersonsRepository;
+import com.example.test32.repository.PersonsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

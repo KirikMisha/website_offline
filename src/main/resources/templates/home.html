@@ -11,7 +11,7 @@
 <header th:replace="components/header :: header"></header>
 <div class="container-fluid background-image-container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" style="background-color:rgb(250 250 250 / 24%);">
             <h2 class="text-center">Новости</h2>
             <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех новостей -->
@@ -19,7 +19,7 @@
                     <h2 class="custom-h2"><a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a></h2>
                     <p th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></p>
                     <!-- Вывод изображения новости, если оно есть -->
-                    <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid" alt="News Image" style="max-width: 100%; max-height: 200px;"/>
+                    <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid custom-img-home" alt="News Image" style="max-width: 100%; max-height: 200px;"/>
                 </th:block>
             </div>
         </div>
@@ -47,15 +47,15 @@
         <div class="col-md-4" th:if="${additionalInfoList.size() == 0}">
             <p>Нет доступной информации о дне.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="background-color:rgb(250 250 250 / 24%);">
             <h2 class="text-center">Объявления</h2>
             <div class="announcement-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех объявлений -->
                 <th:block th:each="announcement : ${allAnnouncements}">
                     <h2 class="custom-h2"><a th:text="${announcement.title}" th:href="@{'/announcements/details/' + ${announcement.id}}"></a></h2>
-                    <p th:text="${#strings.length(announcement.text) > 30 ? #strings.substring(announcement.text, 0, 30) + '...' : announcement.text}"></p>
+                    <p th:text="${#strings.length(announcement.text) > 30 ? announcement.text.substring(0, 30) : announcement.text}"></p>
                     <!-- Вывод изображения объявления, если оно есть -->
-                    <img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid" alt="Announcement Image" style="max-width: 100%; max-height: 200px;"/>
+                    <img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid custom-img-home" alt="Announcement Image"/>
                 </th:block>
             </div>
         </div>

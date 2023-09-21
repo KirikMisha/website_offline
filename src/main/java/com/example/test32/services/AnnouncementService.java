@@ -2,7 +2,7 @@ package com.example.test32.services;
 
 import com.example.test32.forms.AnnouncementForm;
 import com.example.test32.models.Announcement;
-import com.example.test32.repo.AnnouncementRepository;
+import com.example.test32.repository.AnnouncementRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,6 +17,12 @@ public class AnnouncementService {
 
     public AnnouncementService(AnnouncementRepository announcementRepository) {
         this.announcementRepository = announcementRepository;
+    }
+
+    public Announcement saveAnnouncementWithHtmlBreaks(Announcement announcement) {
+        String textWithHtmlBreaks = announcement.getText().replace("\n", "<br>");
+        announcement.setText(textWithHtmlBreaks);
+        return announcementRepository.save(announcement);
     }
 
     public Announcement createAnnouncement(AnnouncementForm announcementForm) {

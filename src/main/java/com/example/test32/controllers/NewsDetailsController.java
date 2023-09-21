@@ -1,7 +1,7 @@
 package com.example.test32.controllers;
 
 import com.example.test32.models.News;
-import com.example.test32.repo.NewsRepository;
+import com.example.test32.repository.NewsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

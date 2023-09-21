@@ -1,7 +1,7 @@
 package com.example.test32.services;
 
 import com.example.test32.models.CalendarDay;
-import com.example.test32.repo.CalendarDayRepository;
+import com.example.test32.repository.CalendarDayRepository;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

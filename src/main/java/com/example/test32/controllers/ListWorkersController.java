@@ -1,7 +1,7 @@
 package com.example.test32.controllers;
 
 import com.example.test32.models.PersonsEntity;
-import com.example.test32.repo.PersonsRepository;
+import com.example.test32.repository.PersonsRepository;
 import com.example.test32.services.CalendarDayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;

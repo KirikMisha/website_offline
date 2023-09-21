@@ -2,10 +2,9 @@ package com.example.test32.controllers;
 
 import com.example.test32.forms.AnnouncementForm;
 import com.example.test32.models.Announcement;
-import com.example.test32.repo.AnnouncementRepository;
+import com.example.test32.repository.AnnouncementRepository;
 import com.example.test32.services.AnnouncementService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,12 +47,6 @@ public class AnnouncementController {
         announcementRepository.deleteAll(oldAnnouncements);
     }
 
-//    @GetMapping("/add")
-//    public String showAddAnnouncementForm(Model model) {
-//        AnnouncementForm announcementForm = new AnnouncementForm();
-//        model.addAttribute("announcementForm", announcementForm);
-//        return "add-announcement";
-//    }
 
     private String getClientIpAddress(HttpServletRequest request) {
         String ipAddress = request.getHeader("X-FORWARDED-FOR");

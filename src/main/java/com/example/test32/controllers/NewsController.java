@@ -2,7 +2,7 @@ package com.example.test32.controllers;
 
 import com.example.test32.forms.NewsForm;
 import com.example.test32.models.News;
-import com.example.test32.repo.NewsRepository;
+import com.example.test32.repository.NewsRepository;
 import com.example.test32.services.NewsService;
 import jakarta.validation.Valid;
 import org.springframework.scheduling.annotation.Scheduled;

@@ -1,7 +1,7 @@
 package com.example.test32.controllers;
 
 import com.example.test32.models.Announcement;
-import com.example.test32.repo.AnnouncementRepository;
+import com.example.test32.repository.AnnouncementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.example.test32.repo;
+package com.example.test32.repository;
 
 import com.example.test32.models.PersonsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

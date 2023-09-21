@@ -3,7 +3,7 @@ package com.example.test32.services;
 import com.example.test32.forms.NewsForm;
 import com.example.test32.models.News;
 import org.springframework.stereotype.Service;
-import com.example.test32.repo.NewsRepository;
+import com.example.test32.repository.NewsRepository;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
