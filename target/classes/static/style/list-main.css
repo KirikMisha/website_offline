@@ -33,9 +33,3 @@ body {
     background-repeat: no-repeat; /* Запретить повторение фоновой картинки */
     background-attachment: fixed; /* Зафиксировать фон, чтобы он не скролился */
 }
-/*.card-text strong {*/
-/*    font-weight: bold;*/
-/*}*/
-/*.bold-text {*/
-/*    font-weight: bold;*/
-/*}*/

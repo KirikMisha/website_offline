@@ -11,7 +11,7 @@
 <header th:replace="components/header :: header"></header>
 <div class="container-fluid background-image-container">
     <div class="row">
-        <div class="col-md-4" style="background-color:rgb(250 250 250 / 24%);">
+        <div class="col-md-4 highlighting_in_white">
             <h2 class="text-center">Новости</h2>
             <div class="news-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех новостей -->
@@ -47,8 +47,7 @@
         <div class="col-md-4" th:if="${additionalInfoList.size() == 0}">
             <p>Нет доступной информации о дне.</p>
         </div>
-        <div class="col-md-4" style="background-color:rgb(250 250 250 / 24%);">
-<!--        <div class="col-md-4">-->
+        <div class="col-md-4 highlighting_in_white">
             <h2 class="text-center">Объявления</h2>
             <div class="announcement-container" style="max-height: 400px; overflow-y: auto; position: relative; z-index: 2;">
                 <!-- Вывод всех объявлений -->
@@ -63,7 +62,6 @@
     </div>
 </div>
 
-<!--<div class="page-end"></div>-->
 <div class="style-head"></div>
 <div class="under-style"></div>
 <img th:class="img-fluid" alt="низ" th:src="@{/icon/under_head.png}">

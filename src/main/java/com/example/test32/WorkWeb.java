@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class WorkWeb {
 
     public static void main(String[] args) {
+
         SpringApplication.run(WorkWeb.class, args);
     }
 }

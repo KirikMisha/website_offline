@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class CalendarDayService {
 
-    private final String CALENDAR_URL = "https://www.calend.ru/holidays/september/";
+    private final String CALENDAR_URL = "https://www.calend.ru/holidays/october/";
 
     @Autowired
     private CalendarDayRepository calendarDayRepository;

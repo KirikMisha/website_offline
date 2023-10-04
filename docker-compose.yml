@@ -1,5 +1,5 @@
 #версия спецификации докера
-version: '3'
+version: '3.9'
 
 #прописываем сервисы
 services:
@@ -11,12 +11,11 @@ services:
 #      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web?useSSL=false&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - SPRING_DATASOURCE_PASSWORD=root
-
     ports:
-      - "3306:3306"
-    networks:
-      - test-3-2_default
+      - "3306:33060"
+    container_name: database
 
   app:
     build:
@@ -30,11 +29,4 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
-    networks:
-      - test-3-2_default
 
-networks:
-  test-3-2_default:
-    external: true
-
-#правила взаимодействия контейнеров.
