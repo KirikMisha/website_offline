@@ -9,7 +9,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
 #      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web?useSSL=false&serverTimezone=UTC
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/spring_work_web?useSSL=false&serverTimezone=UTC
+      - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/spring_work_web?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - SPRING_DATASOURCE_PASSWORD=root

@@ -1,36 +1,36 @@
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\UnsupportedMediaTypeException.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\models\Quotes.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\DownloadController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\MainController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\models\News.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\dtos\PostDto.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\services\NewsService.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\models\PersonsEntity.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\services\AnnouncementService.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\forms\AnnouncementForm.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\models\CalendarDay.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\config\SecurityConfig.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\GlobalExceptionHandlerController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\repository\NewsRepository.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\repository\AnnouncementRepository.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\models\Announcement.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\config\FormattingUtils.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\NewsDetailsController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\services\ExcelReader.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\config\WebMvcConfig.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\InfoCalendarController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\repository\CalendarDayRepository.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\models\Post.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\services\MultipartConfig.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\AnnouncementController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\AnnouncementDownloadController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\ListWorkersController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\forms\NewsForm.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\NewsController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\services\ParserService.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\services\CalendarDayService.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\WorkWeb.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\repository\PersonsRepository.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\CalendarController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\controllers\AnnouncementsDetailsController.java
-C:\Users\kirik\OneDrive\Рабочий стол\проекты\test-3-2\src\main\java\com\example\test32\repository\QuoteRepository.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\services\AnnouncementService.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\NewsRepository.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\PersonsRepository.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Quotes.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\NewsController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\QuoteRepository.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\CalendarDayRepository.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\AnnouncementController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\services\NewsService.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\config\SecurityConfig.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\models\PersonsEntity.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\AnnouncementsDetailsController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\UnsupportedMediaTypeException.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\config\FormattingUtils.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\AnnouncementDownloadController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\models\News.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\ListWorkersController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Post.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\services\CalendarDayService.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\forms\AnnouncementForm.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\CalendarController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\NewsDetailsController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\GlobalExceptionHandlerController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\AnnouncementRepository.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\MainController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\InfoCalendarController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\dtos\PostDto.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\models\CalendarDay.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\WorkWeb.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\DownloadController.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Announcement.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\services\ExcelReader.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\services\MultipartConfig.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\forms\NewsForm.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\services\ParserService.java
+C:\Users\РњРёС…Р°РёР»\IdeaProjects\website_offline\src\main\java\com\example\test32\config\WebMvcConfig.java
