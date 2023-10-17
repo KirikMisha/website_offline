@@ -1,0 +1,21 @@
+body {
+    background-image: url('../icon/main_img.png');
+    background-size: cover; /* Растянуть картинку на весь экран */
+    background-repeat: no-repeat; /* Запретить повторение фоновой картинки */
+    background-attachment: fixed; /* Зафиксировать фон, чтобы он не скролился */
+}
+.news-text {
+    margin: 30px; !important;
+}
+.centered-image {
+    max-width: 100%;
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.news-body {
+    color: white; /* Установка белого цвета текста */
+    background-color: rgba(0, 0, 0, 0.7); /* Прозрачный черный фон (задайте нужную прозрачность) */
+    padding: 10px; /* Добавление внутренних отступов для текста */
+}

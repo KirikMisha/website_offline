@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/news-details.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/all-announcements.css}">
+    <title th:text="${announcement.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<header th:replace="components/header :: header"></header>
+<h2 th:text="${announcement.title}" class="news-text"></h2>
+
+<!-- Проверяем, не пустой ли текст анонса, и добавляем его, если он не пустой -->
+<div th:if="${announcement.text != null and !#strings.isEmpty(announcement.text)}">
+    <p th:utext="${#strings.replace(announcement.text, '\n', '<br>')}" class="news-text news-body"></p>
+</div>
+
+<!-- Отображение изображения новости, если оно есть -->
+<img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid centered-image enlarged-image" alt="News Image">
+
+<div class="style-head"></div>
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>
