@@ -4,7 +4,6 @@
 .card {
     margin-right: 20px;
     margin-bottom: 20px;
-    /*width: 300px;*/
     display: flex;
 }
 .card-title {

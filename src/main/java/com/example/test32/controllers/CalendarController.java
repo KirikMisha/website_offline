@@ -51,6 +51,10 @@ public class CalendarController {
         // Установка списка новостей в модель
         model.addAttribute("allNews", allNews);
 
+        // Получение самой свежей новости
+//        News latestNews = newsRepository.findTopByOrderByCreatedAtDesc();
+//        model.addAttribute("latestNews", latestNews);
+
         // Получение списка новостей
         List<News> newsList = newsRepository.findAllByOrderByCreatedAtDesc();
         model.addAttribute("newsList", newsList);
@@ -58,8 +62,14 @@ public class CalendarController {
         // Получение списка цитат
         List<Quotes> quoteList = quoteRepository.findAll();
 
-        // Получение списка объявлений
+        // Получение самой свежего объявления
+//        Announcement latestAnnouncement = announcementRepository.findTopByOrderByCreatedAtDesc();
+//        model.addAttribute("latestAnnouncement", latestAnnouncement);
+
+
+//         Получение списка объявлений
         List<Announcement> announcements = announcementRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+        model.addAttribute("latestAnnouncement", announcements);
 
         // Генерация случайного индекса
         Random random = new Random();
@@ -67,7 +77,6 @@ public class CalendarController {
 
         model.addAttribute("quoteList", quoteList);
         model.addAttribute("randomIndex", randomIndex);
-        model.addAttribute("allAnnouncements", announcements);
 
         return "home";
     }
