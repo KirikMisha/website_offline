@@ -29,7 +29,7 @@ public class AnnouncementsDetailsController {
         if (announcementOptional.isPresent()) {
             Announcement announcement = announcementOptional.get();
             model.addAttribute("announcement", announcement);
-            return "all-announcements"; // Имя вашего HTML-шаблона для деталей объявления
+            return "announcement-details"; // Имя вашего HTML-шаблона для деталей объявления
         } else {
             return "redirect:/"; // Редирект на главную страницу или обработка ошибки, если объявление не найдено
         }

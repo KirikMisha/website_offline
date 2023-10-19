@@ -2,6 +2,7 @@ package com.example.test32.services;
 
 import com.example.test32.forms.NewsForm;
 import com.example.test32.models.News;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.example.test32.repository.NewsRepository;
 import org.springframework.web.multipart.MultipartFile;
@@ -9,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.List;
 
 @Service
 public class NewsService {
@@ -31,11 +33,18 @@ public class NewsService {
                 Blob imageBlob = new javax.sql.rowset.serial.SerialBlob(imageData); // Создаем Blob с помощью javax.sql.rowset.serial.SerialBlob
                 news.setImageUrl(imageBlob);
             } catch (IOException | SQLException e) {
-                // Обработка ошибки чтения изображения
             }
         }
-
-        // Другая обработка, сохранение в базу данных и т.д.
         return newsRepository.save(news);
+    }
+    public List<News> getTwoLatestNews() {
+        Sort sortByCreatedAtDesc = Sort.by(Sort.Direction.DESC, "createdAt");
+        List<News> latestNews = newsRepository.findAll(sortByCreatedAtDesc);
+
+        if (latestNews.size() >= 2) {
+            return latestNews.subList(0, 2);
+        } else {
+            return latestNews;
+        }
     }
 }

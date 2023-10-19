@@ -94,6 +94,6 @@ public class AnnouncementController {
     public String showAllAnnouncements(Model model) {
         List<Announcement> allAnnouncements = announcementRepository.findAll();
         model.addAttribute("allAnnouncements", allAnnouncements);
-        return "all-announcements";
+        return "announcement-details";
     }
 }

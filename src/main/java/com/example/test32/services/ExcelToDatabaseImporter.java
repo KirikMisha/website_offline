@@ -20,11 +20,10 @@ public class ExcelToDatabaseImporter {
             String insertQuery = "INSERT INTO person (phone_number, landline_phone, last_name, first_name, middle_name, office_number, position) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
 
-            Sheet sheet = workbook.getSheetAt(0); // Предполагается, что данные находятся в первом листе.
+            Sheet sheet = workbook.getSheetAt(0);
 
             for (Row row : sheet) {
                 if (row.getRowNum() == 0) {
-                    // Пропустить первую строку с заголовками столбцов.
                     continue;
                 }
 
@@ -63,7 +62,6 @@ public class ExcelToDatabaseImporter {
         if (cell.getCellType() == CellType.STRING) {
             return cell.getStringCellValue();
         } else if (cell.getCellType() == CellType.NUMERIC) {
-            // Преобразуйте числовое значение в текст.
             return String.valueOf((int)cell.getNumericCellValue());
         } else {
             return "";

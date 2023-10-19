@@ -5,9 +5,11 @@ import com.example.test32.models.News;
 import com.example.test32.models.Quotes;
 import com.example.test32.repository.NewsRepository;
 import com.example.test32.repository.QuoteRepository;
+import com.example.test32.services.AnnouncementService;
 import com.example.test32.services.CalendarDayService;
 import com.example.test32.models.Announcement;
 import com.example.test32.repository.AnnouncementRepository;
+import com.example.test32.services.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -24,13 +26,17 @@ public class CalendarController {
     private final NewsRepository newsRepository;
     private final QuoteRepository quoteRepository;
     private final AnnouncementRepository announcementRepository;
+    private final NewsService newsService;
+    private final AnnouncementService announcementService;
 
     @Autowired
-    public CalendarController(CalendarDayService calendarDayService, NewsRepository newsRepository, QuoteRepository quoteRepository,  AnnouncementRepository announcementRepository) {
+    public CalendarController(CalendarDayService calendarDayService, NewsRepository newsRepository, QuoteRepository quoteRepository,  AnnouncementRepository announcementRepository, AnnouncementService announcementService,NewsService newsService) {
         this.calendarDayService = calendarDayService;
         this.newsRepository = newsRepository;
         this.quoteRepository = quoteRepository;
         this.announcementRepository = announcementRepository;
+        this.newsService = newsService;
+        this.announcementService = announcementService;
     }
 
     @GetMapping("/")
@@ -46,30 +52,22 @@ public class CalendarController {
         model.addAttribute("infoNumber", 1); // Установите нужное значение infoNumber
 
         // Получение списка всех новостей
-        List<News> allNews = newsRepository.findAllByOrderByCreatedAtDesc();
+//        List<News> allNews = newsRepository.findAllByOrderByCreatedAtDesc();
+        List<News> latestNews = newsService.getTwoLatestNews();
+        model.addAttribute("allNews", latestNews);
 
         // Установка списка новостей в модель
-        model.addAttribute("allNews", allNews);
-
-        // Получение самой свежей новости
-//        News latestNews = newsRepository.findTopByOrderByCreatedAtDesc();
-//        model.addAttribute("latestNews", latestNews);
-
-        // Получение списка новостей
-        List<News> newsList = newsRepository.findAllByOrderByCreatedAtDesc();
-        model.addAttribute("newsList", newsList);
+//        model.addAttribute("allNews", allNews);
 
         // Получение списка цитат
         List<Quotes> quoteList = quoteRepository.findAll();
 
-        // Получение самой свежего объявления
-//        Announcement latestAnnouncement = announcementRepository.findTopByOrderByCreatedAtDesc();
-//        model.addAttribute("latestAnnouncement", latestAnnouncement);
-
+        List<Announcement> announcements = announcementService.getTwoLatestAnnoucement();
+        model.addAttribute("latestAnnouncement", announcements);
 
 //         Получение списка объявлений
-        List<Announcement> announcements = announcementRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
-        model.addAttribute("latestAnnouncement", announcements);
+//        List<Announcement> announcements = announcementRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+//        model.addAttribute("latestAnnouncement", announcements);
 
         // Генерация случайного индекса
         Random random = new Random();

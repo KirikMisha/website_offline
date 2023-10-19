@@ -3,6 +3,7 @@ package com.example.test32.services;
 import com.example.test32.forms.AnnouncementForm;
 import com.example.test32.models.Announcement;
 import com.example.test32.repository.AnnouncementRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class AnnouncementService {
@@ -21,22 +23,11 @@ public class AnnouncementService {
         this.announcementRepository = announcementRepository;
     }
 
-//    public Announcement getLatestAnnouncement() {
-//        return announcementRepository.findTopByOrderByCreatedAtDesc();
-//    }
-
-    public Announcement saveAnnouncementWithHtmlBreaks(Announcement announcement) {
-        String textWithHtmlBreaks = announcement.getText().replace("\n", "<br>");
-        announcement.setText(textWithHtmlBreaks);
-        return announcementRepository.save(announcement);
-    }
-
     public Announcement createAnnouncement(AnnouncementForm announcementForm) {
         Announcement announcement = new Announcement();
         announcement.setTitle(announcementForm.getTitle());
         announcement.setText(announcementForm.getText());
 
-        // Установка текущей даты как даты создания
         announcement.setCreatedAt(new Date());
 
         MultipartFile image = announcementForm.getImage();
@@ -46,10 +37,25 @@ public class AnnouncementService {
                 Blob imageBlob = new javax.sql.rowset.serial.SerialBlob(imageData);
                 announcement.setImageUrl(imageBlob);
             } catch (IOException | SQLException e) {
-                // Обработка ошибки чтения изображения
             }
         }
 
         return announcementRepository.save(announcement);
     }
+    public List<Announcement> getTwoLatestAnnoucement() {
+        Sort sortByCreatedAtDesc = Sort.by(Sort.Direction.DESC, "createdAt");
+        List<Announcement> latestAnnouncement = announcementRepository.findAll(sortByCreatedAtDesc);
+
+        if (latestAnnouncement.size() >= 2) {
+            return latestAnnouncement.subList(0, 2);
+        } else {
+            return latestAnnouncement;
+        }
+    }
+    public List<Announcement> getLatestAnnoucements() {
+        Sort sortByCreatedAtDesc = Sort.by(Sort.Direction.DESC, "createdAt");
+        List<Announcement> allAnnouncements = announcementRepository.findAll(sortByCreatedAtDesc);
+        return allAnnouncements;
+    }
+
 }

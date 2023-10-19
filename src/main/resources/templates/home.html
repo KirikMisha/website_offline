@@ -13,18 +13,21 @@
     <div class="row">
         <div class="col-md-4 highlighting_in_white">
             <h2 class="text-center">Новости</h2>
-            <div class="news-container" style="max-height: 300px; overflow-y: auto; position: relative; z-index: 2;">
-                <!-- Вывод всех новостей -->
-                <th:block th:each="news : ${allNews}">
-                    <div class="announcements-news">
-                        <h2 class="custom-h2" th:if="${news.title}">
-                            <a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a>
-                        </h2>
-                        <p th:if="${news.text}" th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></p>
-                        <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid custom-img-home" alt="News Image" style="max-width: 100%; max-height: 200px;"/>
-                    </div>
+            <div class="news-container" style="max-height: 690px; overflow-y: auto; position: relative; z-index: 2;">
+                <!-- Вывод двух новостей -->
+                <th:block th:each="news, iterStat : *{allNews}">
+                    <th:block th:if="${iterStat.index < 2}">
+                        <div class="announcements-news">
+                            <h2 class="custom-h2" th:if="${news.title}">
+                                <a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a>
+                            </h2>
+                            <p th:if="${news.text}" th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></p>
+                            <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid custom-img-home" alt="News Image" style="max-width: 100%; max-height: 200px;"/>
+                        </div>
+                    </th:block>
                 </th:block>
             </div>
+            <a th:href="@{'/news/all'}" class="btn btn-primary" style="background-color: #902738; border-color: #902738;">Смотреть все новости</a>
         </div>
         <div class="col-md-4" th:if="${additionalInfoList.size() > 0}">
             <div id="currentDayOfWeek"></div>
@@ -52,17 +55,22 @@
         </div>
         <div class="col-md-4 highlighting_in_white">
             <h2 class="text-center">Объявления</h2>
-            <div class="announcement-container" style="max-height: 300px; overflow-y: auto; position: relative; z-index: 2;">
-                <!-- Вывод всех объявлений -->
-                <th:block th:each="announcement : ${latestAnnouncement}">
-                    <div class="announcements-news">
-                        <h2 class="custom-h2" th:if="${announcement.title}">
-                            <a th:text="${announcement.title}" th:href="@{'/announcements/details/' + ${announcement.id}}"></a>
-                        </h2>
-                        <p th:if="${announcement.text}" th:text="${#strings.length(announcement.text) > 30 ? announcement.text.substring(0, 30) : announcement.text}"></p>
-                        <img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid custom-img-home" alt="Announcement Image"/>
-                    </div>
+            <div class="announcement-container" style="max-height: 690px; overflow-y: auto; position: relative; z-index: 2;">
+                <!-- Вывод двух объявлений -->
+                <th:block th:each="announcement, iterStat : *{latestAnnouncement}">
+                    <th:block th:if="${iterStat.index < 2}">
+                        <div class="announcements-news">
+                            <h2 class="custom-h2" th:if="${announcement.title}">
+                                <a th:text="${announcement.title}" th:href="@{'/announcements/details/' + ${announcement.id}}"></a>
+                            </h2>
+                            <p th:if="${announcement.text}" th:text="${#strings.length(announcement.text) > 30 ? #strings.substring(announcement.text, 0, 30) + '...' : announcement.text}"></p>
+                            <img th:if="${announcement.imageUrl != null}" th:src="@{'/download/announcement/' + ${announcement.id}}" class="img-fluid custom-img-home" alt="Announcement Image"/>
+                        </div>
+                    </th:block>
                 </th:block>
+                <h4>
+                <a th:href="@{'/announcement/all'}" class="btn btn-primary" style="background-color: #902738; border-color: #902738;">Смотреть все объявления</a>
+                </h4>
             </div>
         </div>
     </div>

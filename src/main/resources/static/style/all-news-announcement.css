@@ -1,0 +1,14 @@
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.announcements-news {
+    text-align: center;
+    margin: 50px;
+    max-width: 800px;
+    justify-content: center;
+    height: 40vh;
+}
