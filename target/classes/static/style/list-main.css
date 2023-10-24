@@ -32,3 +32,6 @@ body {
     background-repeat: no-repeat; /* Запретить повторение фоновой картинки */
     background-attachment: fixed; /* Зафиксировать фон, чтобы он не скролился */
 }
+.card-body{
+    color: #902738;
+}

@@ -84,7 +84,7 @@ public class NewsController {
     }
 
     @PostMapping("/add")
-    public String addNews(@ModelAttribute("newsForm") @Valid NewsForm newsForm, BindingResult result, Model model) {
+    public String addNews(@ModelAttribute("newsForm") @Valid NewsForm newsForm, BindingResult result) {
         if (result.hasErrors()) {
             return "add-news";
         }

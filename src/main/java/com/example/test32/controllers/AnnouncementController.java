@@ -24,7 +24,7 @@ public class AnnouncementController {
     private final AnnouncementRepository announcementRepository;
 
     //Разрешенный IP-адрес
-    private final String allowedIpAddress = "0:0:0:0:0:0:0:1"; // Замените на реальный IP
+    private final String allowedIpAddress = "0:0:0:0:0:0:0:1";
 
 
 
@@ -70,7 +70,7 @@ public class AnnouncementController {
     }
 
     @PostMapping("/add")
-    public String addAnnouncement(@ModelAttribute("announcementForm") @Valid AnnouncementForm announcementForm, BindingResult result, Model model) {
+    public String addAnnouncement(@ModelAttribute("announcementForm") @Valid AnnouncementForm announcementForm, BindingResult result) {
 
         if (result.hasErrors()) {
             return "add-announcement";
