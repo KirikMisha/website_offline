@@ -3,6 +3,7 @@ C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\tes
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\PersonsRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Quotes.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\NewsController.java
+C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\AllAnnoucementsController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\QuoteRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\CalendarDayRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\AnnouncementController.java
@@ -18,8 +19,8 @@ C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\tes
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Post.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\services\CalendarDayService.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\forms\AnnouncementForm.java
-C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\CalendarController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\NewsDetailsController.java
+C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\services\ExcelToDatabaseImporter.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\GlobalExceptionHandlerController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\AnnouncementRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\MainController.java
@@ -27,6 +28,7 @@ C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\tes
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\dtos\PostDto.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\models\CalendarDay.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\WorkWeb.java
+C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\AllNewsController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\DownloadController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Announcement.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\services\ExcelReader.java

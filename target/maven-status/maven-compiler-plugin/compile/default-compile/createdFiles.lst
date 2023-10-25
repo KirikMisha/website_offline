@@ -4,6 +4,8 @@ com\example\test32\WorkWeb.class
 com\example\test32\controllers\AnnouncementController.class
 com\example\test32\controllers\NewsDetailsController.class
 com\example\test32\services\CalendarDayService.class
+com\example\test32\controllers\AllNewsController.class
+com\example\test32\services\ExcelToDatabaseImporter.class
 com\example\test32\models\Announcement.class
 com\example\test32\repository\QuoteRepository.class
 com\example\test32\repository\CalendarDayRepository.class
@@ -16,13 +18,14 @@ com\example\test32\controllers\InfoCalendarController.class
 com\example\test32\services\ParserService.class
 com\example\test32\repository\PersonsRepository.class
 com\example\test32\controllers\NewsController.class
+com\example\test32\controllers\MainController.class
 com\example\test32\controllers\GlobalExceptionHandlerController.class
 com\example\test32\models\PersonsEntity.class
 com\example\test32\models\CalendarDay.class
 com\example\test32\services\MultipartConfig.class
+com\example\test32\controllers\AllAnnoucementsController.class
 com\example\test32\models\Quotes.class
 com\example\test32\controllers\AnnouncementsDetailsController.class
-com\example\test32\controllers\CalendarController.class
 com\example\test32\config\WebMvcConfig.class
 com\example\test32\services\AnnouncementService.class
 com\example\test32\models\News.class

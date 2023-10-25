@@ -20,8 +20,7 @@ public class NewsDetailsController {
     public String showNewsDetail(@PathVariable Long id, Model model) {
         News news = newsRepository.findById(id).orElse(null);
         if (news == null) {
-            // Обработка случая, если новость не найдена
-            return "redirect:/"; // Можно перенаправить на главную страницу
+            return "redirect:/";
         }
 
         model.addAttribute("news", news);
