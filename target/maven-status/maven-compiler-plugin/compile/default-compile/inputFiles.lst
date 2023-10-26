@@ -1,4 +1,5 @@
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\services\AnnouncementService.java
+C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\VacationTemplatesController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\NewsRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\PersonsRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\models\Quotes.java
@@ -21,6 +22,7 @@ C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\tes
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\forms\AnnouncementForm.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\NewsDetailsController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\services\ExcelToDatabaseImporter.java
+C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\services\TacationTemplatesService.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\GlobalExceptionHandlerController.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\repository\AnnouncementRepository.java
 C:\Users\Михаил\IdeaProjects\website_offline\src\main\java\com\example\test32\controllers\MainController.java

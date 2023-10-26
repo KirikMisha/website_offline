@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class CalendarDayService {
 
-    private final String CALENDAR_URL = "https://www.calend.ru/holidays/october/";
+    private final String CALENDAR_URL = "https://www.calend.ru/holidays/may/";
 
     @Autowired
     private CalendarDayRepository calendarDayRepository;
@@ -36,7 +36,6 @@ public class CalendarDayService {
 
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
                 LocalDate date = LocalDate.parse(dataNum, formatter);
-
 
                 // Get the additional information columns
                 Elements captionElements = dayElement.select(".caption .title");
@@ -57,7 +56,7 @@ public class CalendarDayService {
                 // Check if a CalendarDay object already exists for the given day and month
                 int day = date.getDayOfMonth();
                 int month = date.getMonthValue();
-                CalendarDay existingCalendarDay = calendarDayRepository.findByDayAndMonth(day, month);
+                CalendarDay existingCalendarDay = getCalendarDayByDate(date);
 
                 if (existingCalendarDay != null) {
                     // If the object exists, check each column for differences
@@ -76,7 +75,6 @@ public class CalendarDayService {
                     newCalendarDay.setDay(day);
                     newCalendarDay.setMonth(month);
                     newCalendarDay.setDate(date);
-//                    newCalendarDay.setDescription(description);
 
                     // Set additional information columns
                     for (int i = 0; i < additionalInfoList.size() && i < 10; i++) {
@@ -140,15 +138,15 @@ public class CalendarDayService {
     }
 
     public CalendarDay getCalendarDayByDate(LocalDate date) {
-        return calendarDayRepository.findByDate(date);
+        int day = date.getDayOfMonth();
+        int month = date.getMonthValue();
+        CalendarDay calendarDay = calendarDayRepository.findByDayAndMonth(day, month);
+        return calendarDay;
     }
-
     public List<CalendarDay> getAllCalendarDays() {
         return calendarDayRepository.findAll();
     }
-
     public CalendarDay getCalendarDayById(Long id) {
         return calendarDayRepository.findById(id).orElse(null);
     }
-
 }

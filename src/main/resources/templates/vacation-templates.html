@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/index.css">
+    <meta charset="UTF-8">
+    <title>Шаблон отпуска</title>
+</head>
+<header th:replace="components/header :: header"></header>
+<body>
+<h1>Шаблон документа</h1>
+<form action="/generate-pdf" method="POST">
+
+    <label for="departmentNumber">номер отдела:</label>
+    <input type="text" id="departmentNumber" name="departmentNumber"><br><br>
+
+    <label for="profession">должность, профессия:</label>
+    <input type="text" id="profession" name="profession"><br><br>
+
+    <label for="surname">Отчество:</label>
+    <input type="text" id="surname" name="surname"><br><br>
+
+    <label for="firstName">Имя:</label>
+    <input type="text" id="firstName" name="firstName"><br><br>
+
+    <label for="lastName">Фамилия:</label>
+    <input type="text" id="lastName" name="lastName"><br><br>
+
+    <label for="startDate">Дата начала:</label>
+    <input type="date" id="startDate" name="startDate"><br><br>
+
+    <label for="endDate">Дата окончания:</label>
+    <input type="date" id="endDate" name="endDate"><br><br>
+
+    <input type="submit" value="Скачать PDF">
+</form>
+
+</body>
+</html>
