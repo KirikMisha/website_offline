@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/style/index.css">
-    <meta charset="UTF-8">
     <title>Шаблон отпуска</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/vacation-templates.css}">
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-<header th:replace="components/header :: header"></header>
+<header th:replace="~{components/header :: header}"></header>
 <body>
 <h1>Шаблон документа</h1>
 <form action="/generate-pdf" method="POST">
