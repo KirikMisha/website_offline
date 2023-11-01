@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class VacationTemplatesService {
@@ -40,19 +42,43 @@ public class VacationTemplatesService {
 
             long daysInVacation = startDate.until(endDate, ChronoUnit.DAYS);
 
-            String[] rightAlignedLines = {
-                    "Генеральному директору",
-                    "АО «НПП « Краснознамёнец»",
-                    "Варенице В.И.",
-                    "от " + profession,
-                    "цехa №" + departmentNumber,
-                    lastName + " " + firstName + " " + surname
-            };
+            List<String> rightAlignedLines = new ArrayList<>();
+
+            rightAlignedLines.add("Генеральному директору");
+            rightAlignedLines.add("АО «НПП « Краснознамёнец»");
+            rightAlignedLines.add("Варенице В.И.");
+
+            String professionLine = "от " + profession;
+            if (professionLine.length() > 90) {
+                int chunkSize = 30; // Если строка больше 90 символов, разбиваем на 4 строки
+                for (int i = 0; i < professionLine.length(); i += chunkSize) {
+                    int endIndex = Math.min(i + chunkSize, professionLine.length());
+                    rightAlignedLines.add(professionLine.substring(i, endIndex));
+                }
+            } else if (professionLine.length() > 45) {
+                int chunkSize = 45; // Если строка больше 45 символов, разбиваем на 3 строки
+                for (int i = 0; i < professionLine.length(); i += chunkSize) {
+                    int endIndex = Math.min(i + chunkSize, professionLine.length());
+                    rightAlignedLines.add(professionLine.substring(i, endIndex));
+                }
+            } else if (professionLine.length() > 20) {
+                int chunkSize = 20; // Если строка больше 20 символов, разбиваем на 2 строки
+                for (int i = 0; i < professionLine.length(); i += chunkSize) {
+                    int endIndex = Math.min(i + chunkSize, professionLine.length());
+                    rightAlignedLines.add(professionLine.substring(i, endIndex));
+                }
+            } else {
+                rightAlignedLines.add(professionLine);
+            }
+
+            rightAlignedLines.add("цехa №" + departmentNumber);
+            rightAlignedLines.add(lastName + " " + firstName + " " + surname);
+
 
             String centerAlignedLine = "Заявление";
 
             String[] centerAlignedLines = {
-                    "Прошу предоставить мне ежегодный оплачиваемый отпуск по графику в",
+                    "   Прошу предоставить мне ежегодный оплачиваемый отпуск по графику в",
                     "количестве " + daysInVacation + " дней, с " + startDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))+"."
             };
             String todayDate = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
@@ -70,9 +96,10 @@ public class VacationTemplatesService {
 
             float yPosition = PDRectangle.A4.getHeight() - margin - 14; // Начальная позиция верхнего текста
 
+
             for (String line : rightAlignedLines) {
                 float textWidth = font.getStringWidth(line) * 14 / 1000; // Получение ширины текста
-                float xPosition = PDRectangle.A4.getWidth() - margin - marginRight - textWidth;
+                float xPosition = 350;
 
                 contentStream.beginText();
                 contentStream.newLineAtOffset(xPosition, yPosition);
@@ -80,6 +107,7 @@ public class VacationTemplatesService {
                 contentStream.endText();
                 yPosition -= 20; // Смещаем позицию для следующей строки
             }
+
 
             // Вычисляем позицию x для центрального выравнивания
             float textWidth = font.getStringWidth(centerAlignedLine) * 14 / 1000;

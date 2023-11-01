@@ -22,6 +22,9 @@
         max-height: 400px;
         justify-content: center;
     }
+    .custom-h2{
+        color: gold;
+    }
 </style>
 <body>
 <header th:replace="components/header :: header"></header>
@@ -31,9 +34,9 @@
             <h2 class="custom-h2" th:if="${news.title}">
                 <a th:text="${news.title}" th:href="@{'/news/details/' + ${news.id}}"></a>
             </h2>
-            <p th:if="${news.text}">
-                <span th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></span>
-            </p>
+<!--            <p th:if="${news.text}">-->
+<!--                <span th:text="${#strings.length(news.text) > 30 ? #strings.substring(news.text, 0, 30) + '...' : news.text}"></span>-->
+<!--            </p>-->
             <img th:if="${news.imageUrl != null}" th:src="@{'/download/' + ${news.id}}" class="img-fluid custom-img-home" alt="News Image" style="max-width: 100%; max-height: 400px;"/>
         </div>
     </th:block>
