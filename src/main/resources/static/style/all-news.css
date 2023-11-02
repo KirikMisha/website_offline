@@ -1,0 +1,10 @@
+.announcements-news {
+    text-align: center;
+    margin: 50px;
+    max-width: 1600px;
+    max-height: 400px;
+    justify-content: center;
+}
+.custom-h2{
+    color: gold;
+}

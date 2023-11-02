@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Информационная безопасность</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/information-security.css}">
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+</head>
+<header th:replace="~{components/header :: header}"></header>
+<body>
+<h1>Информационная безопасность</h1>
+<ul>
+    <li th:each="file : ${files}">
+        <a th:href="@{/downloadSecurityInfo/{fileId}(fileId=${file.id})}" th:text="${file.filename}">Скачать</a>
+    </li>
+
+</ul>
+</body>
+</html>

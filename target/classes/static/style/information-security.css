@@ -1,0 +1,12 @@
+body {
+    background-image: url('../icon/main_img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+li {
+    margin-bottom: 10px;
+}
+ul li a {
+    text-decoration: none;
+}

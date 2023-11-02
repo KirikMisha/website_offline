@@ -20,4 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
             collapsedNav.classList.remove('show');
         }
     });
+
+    var showVacationButton = document.getElementById('show-vacation-button');
+    var vacationSubmenu = document.getElementById('vacation-submenu');
+
+    showVacationButton.addEventListener('click', function() {
+        // Переключите отображение подсписка "Отпуск" при нажатии на кнопку "Шаблоны"
+        vacationSubmenu.style.display = (vacationSubmenu.style.display === 'block') ? 'none' : 'block';
+    });
 });

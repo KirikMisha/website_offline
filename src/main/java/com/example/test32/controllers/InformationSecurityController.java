@@ -26,7 +26,7 @@ public class InformationSecurityController {
     public String showInformation (Model model){
         List<FileEntity> files = fileEntityRepository.findAll();
         model.addAttribute("files", files);
-        return "information_security";
+        return "information-security";
     }
 
     @GetMapping("/downloadSecurityInfo/{fileId}")

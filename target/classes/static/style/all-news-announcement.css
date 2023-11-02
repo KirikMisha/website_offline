@@ -8,7 +8,12 @@
 .announcements-news {
     text-align: center;
     margin: 50px;
-    max-width: 800px;
+    max-width: 1600px;
+    max-height: 400px;
     justify-content: center;
-    height: 40vh;
+}
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

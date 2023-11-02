@@ -18,9 +18,10 @@
         <span class="fs-4">Главная</span>
     </a>
     <li style="list-style-type: none;">
-        <h2 style="margin: 1px 0; margin-left: 440px;">Краснознаменец</h2>
-        <p style="margin: 1px 0; margin-left: 480px;">Акционерное общество</p>
-        <p style="margin: 1px 0; margin-left: 410px;">Научно-производственное предприятие</p>
+        <h4 style="margin-left: 100px; color: gold">Акционерное общество &lt;&lt;Научно-производственное предприятие&gt;&gt; &lt;&lt;Краснознаменец&gt;&gt;</h4>
+<!--        <h2 style="margin: 1px 0; margin-left: 440px;">Краснознаменец</h2>-->
+<!--        <p style="margin: 1px 0; margin-left: 480px;">Акционерное общество</p>-->
+<!--        <p style="margin: 1px 0; margin-left: 410px;">Научно-производственное предприятие</p>-->
     </li>
     <div class="navbar ml-auto nav-menu">
 <!--        <a>Меню</a>-->
@@ -32,11 +33,19 @@
                 <li class="nav-item">
                     <a class="nav-link col-1" href="/list">Справочник</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link col-1" href="/vacation-templates">Шаблоны</a>
+                <li class="nav-link">
+                    <button class="nav-link col-1" id="show-vacation-button">Заявление</button>
+                    <ul id="vacation-submenu" style="display: none;">
+                        <li>
+                            <a class="nav-link col-1" href="/vacation-templates">Отпуск</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class = "nav-item">
                     <a class="nav-link col-1" href="/InformationSecurity">Информационная безопасность</a>
+                </li>
+                <li>
+                    <a class="nav-link col-1" href="/">Корпаративная газета</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link col-1" href="/news/add">Добавить новость</a>
