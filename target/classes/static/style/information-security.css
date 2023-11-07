@@ -9,4 +9,12 @@ li {
 }
 ul li a {
     text-decoration: none;
+    color: white;
+}
+.white-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+}
+ul.white-text li {
+    margin-bottom: 20px; /* Увеличьте значение, чтобы увеличить отступ между строками */
+    line-height: 1.5; /* Это значение определяет межстрочное расстояние (line height) */
 }

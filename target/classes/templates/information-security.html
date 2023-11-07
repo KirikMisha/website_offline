@@ -9,11 +9,10 @@
 <header th:replace="~{components/header :: header}"></header>
 <body>
 <h1>Информационная безопасность</h1>
-<ul>
+<ul class="white-text">
     <li th:each="file : ${files}">
-        <a th:href="@{/downloadSecurityInfo/{fileId}(fileId=${file.id})}" th:text="${file.filename}">Скачать</a>
+        <a th:href="@{/viewPdf/{fileId}(fileId=${file.id})}" th:text="${file.filename}" target="_blank">Открыть</a>
     </li>
-
 </ul>
 </body>
 </html>

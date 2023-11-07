@@ -32,6 +32,9 @@ a {
     position: relative;
     text-align: center;
     margin: 0 auto;
+    font-weight: bold;
+    font-size: 17px;
+    color: #000000;
 }
 /* Стили для полосы прокрутки */
 .news-container::-webkit-scrollbar {
