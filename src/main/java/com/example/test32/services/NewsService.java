@@ -30,7 +30,7 @@ public class NewsService {
         if (image != null && !image.isEmpty()) {
             try {
                 byte[] imageData = image.getBytes();
-                Blob imageBlob = new javax.sql.rowset.serial.SerialBlob(imageData); // Создаем Blob с помощью javax.sql.rowset.serial.SerialBlob
+                Blob imageBlob = new javax.sql.rowset.serial.SerialBlob(imageData);
                 news.setImageUrl(imageBlob);
             } catch (IOException | SQLException e) {
             }

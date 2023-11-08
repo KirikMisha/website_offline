@@ -15,6 +15,6 @@ ul li a {
     background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
 }
 ul.white-text li {
-    margin-bottom: 20px; /* Увеличьте значение, чтобы увеличить отступ между строками */
-    line-height: 1.5; /* Это значение определяет межстрочное расстояние (line height) */
+    margin-bottom: 20px;
+    line-height: 1.5;
 }

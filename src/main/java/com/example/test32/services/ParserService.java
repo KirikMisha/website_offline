@@ -17,14 +17,4 @@ public class ParserService {
 //        this.excelReader = excelReader;
         this.personRepository = personRepository;
     }
-
-//    public void parseAndSave(String filePath) throws IOException {
-//        List<PersonsEntity> persons = excelReader.readExcelFile(filePath);
-//
-//        for (PersonsEntity person : persons) {
-//            if (personRepository.findByLastNameContainingIgnoreCaseAndFirstNameContainingIgnoreCase(person.getLastName(), person.getFirstName()) == null) {
-//                personRepository.save(person);
-//            }
-//        }
-//    }
 }

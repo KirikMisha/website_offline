@@ -2,6 +2,7 @@ com\example\test32\repository\AnnouncementRepository.class
 com\example\test32\services\NewsService.class
 com\example\test32\WorkWeb.class
 com\example\test32\controllers\AnnouncementController.class
+com\example\test32\config\SwaggerConfig.class
 com\example\test32\controllers\NewsDetailsController.class
 com\example\test32\services\CalendarDayService.class
 com\example\test32\controllers\AllNewsController.class
